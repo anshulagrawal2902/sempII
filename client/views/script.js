@@ -1,6 +1,29 @@
 window.addEventListener("load", ()=>{
+
+
+  const contractAbi = ABI; 
+  const contractAddress = CONTRACT_ADDRESS; 
+  const contract = new web3.eth.Contract(contractAbi, contractAddress);
+
+  // const account = web3.eth.accounts.create();
+
+
+
+
     const connectMetamaskButton = document.getElementById('connect-metamask-button');
     const connectMetamaskButtonMobile = document.getElementById('connect-metamask-button-mobile');
+    let myDonations = document.getElementById("myDonations");
+
+
+
+    myDonations.addEventListener("click", ()=>{
+      // const result = await contract.methods.getOwner().send({
+      // from: account.address,
+      // gas: 1000000
+      // });
+      console.log("hiii");
+      // console.log(result);
+    })
 
 // Check if the user has Metamask installed
 if (typeof window.ethereum !== 'undefined') {
@@ -34,3 +57,8 @@ if (typeof window.ethereum !== 'undefined') {
   connectMetamaskButtonMobile.disabled = true;
 }
 })
+
+
+
+
+
