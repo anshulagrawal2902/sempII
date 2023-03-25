@@ -1,8 +1,33 @@
-const ABI =   [
+const ABI =    [
   {
     "inputs": [],
     "stateMutability": "nonpayable",
     "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "authorizedList",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "registrationNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "wallet",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -11,6 +36,81 @@ const ABI =   [
       {
         "internalType": "uint256",
         "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "donationRecords",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "registrationNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "wallet",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "enrolledNGOs",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "wallet",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "registrationNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "upvotes",
         "type": "uint256"
       }
     ],
@@ -33,13 +133,19 @@ const ABI =   [
     "constant": true
   },
   {
-    "inputs": [],
-    "name": "temp",
-    "outputs": [
+    "inputs": [
       {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "name": "votedWallets",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -188,24 +294,15 @@ const ABI =   [
   },
   {
     "inputs": [],
-    "name": "getDonors",
-    "outputs": [
-      {
-        "internalType": "address[]",
-        "name": "",
-        "type": "address[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
     "name": "myDonations",
     "outputs": [
       {
         "components": [
+          {
+            "internalType": "uint256",
+            "name": "registrationNumber",
+            "type": "uint256"
+          },
           {
             "internalType": "address",
             "name": "wallet",
@@ -229,35 +326,30 @@ const ABI =   [
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "ngoWallet",
+        "type": "address"
+      }
+    ],
+    "name": "upvote",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address payable",
         "name": "ngoWallet",
         "type": "address"
       }
     ],
     "name": "donate",
-    "outputs": [
-      {
-        "components": [
-          {
-            "internalType": "address",
-            "name": "wallet",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "amount",
-            "type": "uint256"
-          }
-        ],
-        "internalType": "struct MainContract.donationRecord",
-        "name": "",
-        "type": "tuple"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "payable",
     "type": "function",
     "payable": true
   }
 ];
   
-const CONTRACT_ADDRESS = "0x3AC4162e1d149A04b4f8C44da30A65Dc9Ad042d3";
+const CONTRACT_ADDRESS = "0x851baC5f76d26768834d8CF1A58b9fdC60c14655";

@@ -18,10 +18,19 @@ window.addEventListener("load", async() => {
   let myDonations = document.getElementById("myDonations");
   let home = document.getElementById("home");
   let enroll = document.getElementById("enroll")
+  let ngoList = document.getElementById("ngoList")
+
+  contract.methods
+      .getNGOList()
+      .call()
+      .then((result) => {
+        console.log(result);
+        ngoList.innerHTML = result;
+      });
 
   myDonations.addEventListener("click", () => {
     contract.methods
-      .getDonors()
+      .myDonations()
       .call()
       .then((result) => {
         console.log(result);
@@ -46,14 +55,14 @@ window.addEventListener("load", async() => {
       
   });
 
-  enroll.addEventListener("click", ()=>{
-    contract.methods
-      .getAuthorizedList()
-      .call()
-      .then((result) => {
-        console.log(result);
-      });
-  })
+  // enroll.addEventListener("click", ()=>{
+  //   contract.methods
+  //     .getAuthorizedList()
+  //     .call()
+  //     .then((result) => {
+  //       console.log(result);
+  //     });
+  // })
 
 
   // Check if the user has Metamask installed
