@@ -14,14 +14,12 @@ window.addEventListener("load", async() => {
     const connectMetamaskButtonMobile = document.getElementById(
       "connect-metamask-button-mobile"
     );
-  
-    let myDonations = document.getElementById("myDonations");
-    let home = document.getElementById("home");
-    let enroll = document.getElementById("enroll")
     
     const form = document.querySelector("form");
     form.addEventListener("submit", handleFormSubmission);
     
+
+
   
     // Check if the user has Metamask installed
     if (typeof window.ethereum !== "undefined") {
@@ -56,45 +54,45 @@ window.addEventListener("load", async() => {
     }
   });
 
+
+
   function handleFormSubmission(event) {
     event.preventDefault(); // prevent default form submission behavior
 
     // get form input values
-    const nameInput = document.getElementById('name');
-    const descInput = document.getElementById('description');
-    const walletAddressInput = document.getElementById('wallet_address');
     const regNumInput = document.getElementById('reg_num');
+    const walletAddressInput = document.getElementById('wallet_address');
 
-    const nameValue = nameInput.value.trim();
-    const descValue = descInput.value.trim();
-    const walletAddressValue = walletAddressInput.value.trim();
     const regNumValue = regNumInput.value.trim();
+    const walletAddressValue = walletAddressInput.value.trim();
 
     // validate input values
-    if (nameValue === '' || descValue === '' || walletAddressValue === '' || regNumValue === '') {
-        alert('Please enter all the details!');
+    if (regNumValue === '' || walletAddressValue === '') {
+        alert('Please enter both registration number and wallet address!');
         return;
     }
 
-    // call contract function using Web3.js
-    contract.methods.enrollAsNGO(nameValue, descValue, walletAddressValue, regNumValue)
-        .send({from: ethereum.selectedAddress})
-        .on('transactionHash', function(hash) {
-            console.log('Transaction hash:', hash);
-            alert('Transaction submitted successfully!');
-        })
-        .on('error', function(error) {
-            console.error('Transaction error:', error);
-            alert('Transaction failed!');
-        });
+    contract.methods.addToAuthorizedNGO(regNumValue, walletAddressValue)
+    .send({from: ethereum.selectedAddress})
+    .on('transactionHash', function(hash) {
+        console.log('Transaction hash:', hash);
+        alert('Transaction submitted successfully!');
+    })
+    .on('error', function(error) {
+        console.error('Transaction error:', error);
+        alert('Transaction failed!');
+    });
+
 
     // clear form input fields
-    nameInput.value = '';
-    descInput.value = '';
-    walletAddressInput.value = '';
     regNumInput.value = '';
+    walletAddressInput.value = '';
+
+    alert('Form submitted successfully!');
 }
 
+
+ 
   
 
   

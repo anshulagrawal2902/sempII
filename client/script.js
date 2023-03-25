@@ -55,15 +55,6 @@ window.addEventListener("load", async() => {
       
   });
 
-  // enroll.addEventListener("click", ()=>{
-  //   contract.methods
-  //     .getAuthorizedList()
-  //     .call()
-  //     .then((result) => {
-  //       console.log(result);
-  //     });
-  // })
-
 
   // Check if the user has Metamask installed
   if (typeof window.ethereum !== "undefined") {
