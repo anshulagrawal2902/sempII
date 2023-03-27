@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Webpage</title>
+
+    <link rel="stylesheet" href="singleNGO.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7/web3.min.js"></script>
+    <script src="connection.js"></script>
+    <script src="singleNGO.js"></script>
+  </head>
+  <body>
+    <!-- The image div -->
+    <div id="image-div" style="align-items: center;">
+        <img  src="donateImg.jpg"  style="width: 1500px; max-height: 500px; display: block;;">
+    </div>
+    <!-- The description div -->
+    <div id="description-div" style="text-align: center;">
+      <h1 id="name">Name Of NGO</h1>
+      <p id="description">description of NGO</p>
+      <button id="upvote">Upvote</button>
+    </div>
+    <div style="align-items: center; text-align: center;">    
+        <form > 
+            <input type="number" id="amount" >
+            <button type="submit">Donate</button>
+        </form>
+    </div>
+</body>
+</html>

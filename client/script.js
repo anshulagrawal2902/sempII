@@ -1,12 +1,13 @@
-window.addEventListener("load", async() => {
+let account;
+window.addEventListener("load", async () => {
   const contractAbi = ABI;
   const contractAddress = CONTRACT_ADDRESS;
   const web3 = new Web3(window.ethereum);
   contract = new web3.eth.Contract(contractAbi, contractAddress);
 
-  const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-  const account = accounts[0];
-  console.log(account)
+  const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+  account = accounts[0];
+  console.log(account);
 
   const connectMetamaskButton = document.getElementById(
     "connect-metamask-button"
@@ -17,44 +18,9 @@ window.addEventListener("load", async() => {
 
   let myDonations = document.getElementById("myDonations");
   let home = document.getElementById("home");
-  let enroll = document.getElementById("enroll")
-  let ngoList = document.getElementById("ngoList")
+  let ngoList = document.getElementById("ngoList");
 
-  contract.methods
-      .getNGOList()
-      .call()
-      .then((result) => {
-        console.log(result);
-        ngoList.innerHTML = result;
-      });
-
-  myDonations.addEventListener("click", () => {
-    contract.methods
-      .myDonations()
-      .call()
-      .then((result) => {
-        console.log(result);
-      });
-  });
-
-  home.addEventListener("click", () => {
-    const value = web3.utils.toWei("1", "ether"); // Replace with the amount of Ether you want to send
-    let gas = 1000000;
-
-    const transaction = contract.methods
-      .donate("0xf7937137330Bd9C8d630AEa211e251433c4fdC72")
-      .send({ from: account, value: value});
-
-    transaction.on('confirmation', function(confirmationNumber, receipt) {
-      console.log('confirmation', confirmationNumber);
-    });
-
-    transaction.on('error', function(error) {
-      console.error('error', error);
-    });
-      
-  });
-
+  displayNGOList();
 
   // Check if the user has Metamask installed
   if (typeof window.ethereum !== "undefined") {
@@ -88,3 +54,36 @@ window.addEventListener("load", async() => {
     connectMetamaskButtonMobile.disabled = true;
   }
 });
+
+async function displayNGOList() {
+  const ngoList = await contract.methods.getNGOList().call(); // call contract function using Web3.js
+
+  const ngoCardTemplate = document.getElementById("ngo_card_template");
+  const ngoListContainer = document.getElementById("ngo_list");
+
+  ngoList.forEach((ngo) => {
+    let ngoCard = ngoCardTemplate.content.cloneNode(true);
+    ngoCard.querySelector(".card-title").textContent = ngo.name;
+    ngoCard.querySelector(".card-text").textContent = ngo.description;
+    ngoCard.querySelector(".upvotes").textContent = ngo.upvotes;
+    ngoCard.querySelector("#upvoteBtn").addEventListener("click", () => {
+      contract.methods
+        .upvote(ngo.wallet)
+        .send({ from: account })
+        .on("transactionHash", function (hash) {
+          console.log("Transaction hash:", hash);
+        })
+        .on("receipt", function (receipt) {
+          console.log("Transaction receipt:", receipt);
+        })
+        .on("error", function (error) {
+          console.error("Transaction error:", error);
+        });
+    });
+    ngoCard.querySelector("#card_body").addEventListener("click", () => {
+      window.location.href = `singleNGO.html?wallet=${ngo.wallet}`;
+    });
+
+    ngoListContainer.appendChild(ngoCard);
+  });
+}
