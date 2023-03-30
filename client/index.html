@@ -1,42 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7/web3.min.js"></script>
     <script src="./connection.js"></script>
     <script src="./script.js"></script>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="myDonations.html">My Donations</a></li>
-    <li><a href="enroll.html">Enroll as NGO</a></li>
-    <li><a href="addNGO.html">Add NGO</a></li>
-  </ul>
-  <button id="connect-btn">Connect to Metamask</button>
-</nav>
-
-<div id="ngo_list">
-  <!-- Enrolled NGOs will be dynamically added here -->
-</div>
-
-<!-- Card template -->
-<template id="ngo_card_template">
-  <div  class="card">
-    <div id="card_body" class="card-body">
-      <h5 class="card-title"></h5>
-      <p class="card-text"></p>
-      <p class="card-text">Upvotes: <span class="upvotes"></span></p>
-    </div>
-    <button id="upvoteBtn">Upvote</button>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  
+  <body > 
+  
+  <div class="header" >
+    <img class="logo" src="logo.png" alt="logo" />
+    <nav >
+      <ul class="nav_links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="myDonations.html">My Donations</a></li>
+        <li><a href="enroll.html">Enroll As NGO</a></li>
+        <li><a href="addNGO.html">Add NGO</a></li>
+      </ul>
+    </nav>
+    <button>Connect to Metamask</button>
   </div>
-</template>
+  
 
-</body>
+    <div class="parent_wrapper" style="margin-top: 10px;">
+      <div
+        class="wrapper"
+       
+        style="padding-top: 120px; text-align: center;"
+        
+      >
+        <h1 id="featuredNGO">Featured NGOs</h1>
+
+        <div class="cols"  id="wrapper_container">
+          <template id="ngo_card_template">
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+              <div class="container">
+                <div
+                  class="front"
+                  style="background-image: url('./card_bg.jpg')"
+                >
+                  <div class="inner">
+                    <p class="card-title"></p>
+                    <span class="upvotes"></span>
+                  </div>
+                </div>
+                <div class="back">
+                  <div class="inner">
+                    <button id="knowMoreBtn">Know More</button>
+                  </div>
+                </div>
+              </div>
+            </template>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
 </html>

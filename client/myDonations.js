@@ -10,5 +10,11 @@ window.addEventListener("load", async () => {
     const myDonations = await contract.methods.myDonations().call();
 
     console.log(myDonations)
-
+    let sum = 0;
+    myDonations.forEach(element => {
+        sum +=  parseInt(element[2])
+    });
+    sum = sum / 1000000000000000000;
+    document.querySelector(".totalDonations").textContent = `Total Donations : ${sum} ETH 🎉🎉`;
+    console.log(sum)
 })

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900');
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* background-color: rgb(237, 230, 230); */
+} 
+
+body{
+  background-color: rgb(237, 230, 230);
+}
+
+li, a, button{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+button{
+  color: rgb(237, 230, 230);
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  overflow: hidden;
+}
+
+.nav_links{
+  list-style: none;
+}
+
+.nav_links li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links li a{
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover{
+  color: rgb(222, 127, 11);
+  font-weight: bold;
+}
+
+button{
+  padding: 9px 25px;
+  background-color: rgb(222, 127, 11);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover{
+  background-color: rgba(222, 127, 11, 0.8);
+} 
+
+.totalDonations{
+    /* top: 100%; */
+    position: relative;
+    top:100px;
+    background-color: rgba(222, 127, 11, 0.8);
+    color: rgb(237, 230, 230);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    height: 45px;
+    margin-top: 20px;
+    padding-top: 10px;
+    
+}
+
+.my-table {
+    width: 100%;
+    position: relative;
+    border-collapse: collapse;
+    background-color: #343a40;
+  }
+  
+  .my-table th,
+  .my-table td {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+    color: #fff;
+  }
+  
+  .my-table th {
+    font-weight: bold;
+    text-align: left;
+    background-color: #212529;
+  }
+  
+  .my-table tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .my-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.075);
+  }
