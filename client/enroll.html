@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7/web3.min.js"></script>
     <script src="./connection.js"></script>
     <script src="./enroll.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="enroll.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img class="logo" src="logo.png" alt="logo" />
+      <nav>
+        <ul class="nav_links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="myDonations.html">My Donations</a></li>
+          <li><a href="enroll.html">Enroll As NGO</a></li>
+          <li><a href="addNGO.html">Add NGO</a></li>
+        </ul>
+      </nav>
+      <button>Connect to Metamask</button>
+    </div>
 
-<form>
-    <label for="name">NGO Name:</label><br>
-    <input type="text" id="name" name="name"><br>
-  
-    <label for="description">Description:</label><br>
-    <textarea id="description" name="description" rows="4" cols="50"></textarea><br>
-  
-    <label for="reg-number">Registration Number:</label><br>
-    <input type="text" id="reg_num" name="reg-number"><br>
-  
-    <label for="wallet-address">Metamask Wallet Address:</label><br>
-    <input type="text" id="wallet_address" name="wallet-address"><br>
-  
-    <button  type="submit" value="Submit">Submit</button>
-  </form>
-  
+    <form class="parent_wrapper">
+      <label for="name">NGO Name:</label><br />
+      <input type="text" id="name" name="name" /><br />
 
-</body>
+      <label for="description">Description:</label><br />
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        cols="50"
+      ></textarea
+      ><br />
+
+      <label for="reg-number">Registration Number:</label><br />
+      <input type="text" id="reg_num" name="reg-number" /><br />
+
+      <label for="wallet-address">Metamask Wallet Address:</label><br />
+      <input type="text" id="wallet_address" name="wallet-address" /><br />
+
+      <button type="submit" value="Submit">Submit</button>
+    </form>
+  </body>
 </html>

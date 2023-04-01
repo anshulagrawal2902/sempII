@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7/web3.min.js"></script>
+    <script src="./connection.js"></script>
+    <script src="./enroll.js"></script>
+    <link rel="stylesheet" href="trial.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img class="logo" src="logo.png" alt="logo" />
+      <nav>
+        <ul class="nav_links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="myDonations.html">My Donations</a></li>
+          <li><a href="enroll.html">Enroll As NGO</a></li>
+          <li><a href="addNGO.html">Add NGO</a></li>
+        </ul>
+      </nav>
+      <button>Connect to Metamask</button>
+    </div>
+
+    <div class="login-box">
+        <form>
+          <h2>Enroll Your NGO</h2>
+    
+          <div class="user-box">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Enter your NGO's name" required>
+          </div>
+    
+          <div class="user-box">
+            <label for="description"></label>
+            <textarea id="description" name="description" placeholder="Provide a brief description of your NGO" rows="4"
+              cols="40" required></textarea>
+          </div>
+    
+          <div class="user-box">
+            <label for="reg-number"></label>
+            <input type="text" id="reg_num" name="reg-number" placeholder="Enter your NGO's registration number" required>
+          </div>
+    
+          <div class="user-box">
+            <label for="wallet-address"></label>
+            <input type="text" id="wallet_address" name="wallet-address" placeholder="Enter your Metamask wallet address"
+              required>
+          </div>
+    
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+  </body>
+</html>
