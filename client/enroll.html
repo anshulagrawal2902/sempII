@@ -1,49 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7/web3.min.js"></script>
-    <script src="./connection.js"></script>
-    <script src="./enroll.js"></script>
-    <link rel="stylesheet" href="enroll.css" />
-  </head>
-  <body>
-    <div class="header">
-      <img class="logo" src="logo.png" alt="logo" />
-      <nav>
-        <ul class="nav_links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="myDonations.html">My Donations</a></li>
-          <li><a href="enroll.html">Enroll As NGO</a></li>
-          <li><a href="addNGO.html">Add NGO</a></li>
-        </ul>
-      </nav>
-      <button>Connect to Metamask</button>
-    </div>
 
-    <form class="parent_wrapper">
-      <label for="name">NGO Name:</label><br />
-      <input type="text" id="name" name="name" /><br />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enrolll NGOs</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7/web3.min.js"></script>
+  <script src="./connection.js"></script>
+  <script src="./enroll.js"></script>
+  <link rel="stylesheet" href="enroll.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-      <label for="description">Description:</label><br />
-      <textarea
-        id="description"
-        name="description"
-        rows="4"
-        cols="50"
-      ></textarea
-      ><br />
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-      <label for="reg-number">Registration Number:</label><br />
-      <input type="text" id="reg_num" name="reg-number" /><br />
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
 
-      <label for="wallet-address">Metamask Wallet Address:</label><br />
-      <input type="text" id="wallet_address" name="wallet-address" /><br />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-      <button type="submit" value="Submit">Submit</button>
-    </form>
-  </body>
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="header">
+    <img class="logo" src="logo.png" alt="logo" />
+    <nav>
+      <ul class="nav_links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="myDonations.html">My Donations</a></li>
+        <li><a href="enroll.html">Enroll As NGO</a></li>
+        <li><a href="addNGO.html">Add NGO</a></li>
+      </ul>
+    </nav>
+    <button>Connect to Metamask</button>
+  </div>
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('images/bg_9.jpg');"></div>
+    <div class="contents order-2 order-md-1" style="background-color:rgb(237, 230, 230); margin-top: -50px;">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7 py-5">
+            <h3>Register</h3>
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="name">NGO's Name</label>
+                    <input type="text" class="form-control" placeholder="e.g. Akshaypatra Foundation" id="name" name="name" required>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="description">NGO's Desciption</label>
+                    <input type="text" class="form-control" id="description" name="description" placeholder="Provide a brief description of your NGO" required>
+                    <!-- <input type="email" class="form-control" placeholder="e.g. john@your-domain.com" id="email"> -->
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="reg-number">NGO's Registration Number</label>
+                    <input type="text" id="reg_num" name="reg-number" class="form-control" placeholder="Enter your NGO's registration number" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="lname">Metamask Wallet Address</label>
+                    <input type="text" id="wallet_address" name="wallet-address" class="form-control" placeholder="Enter your Metamask wallet address" required>
+                  </div>
+                </div>
+              </div>
+              <input type="submit" value="Register" class="btn px-5 btn-primary">
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+</body>
+
 </html>

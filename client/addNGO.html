@@ -1,22 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Registration Form</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7/web3.min.js"></script>
-    <script src="connection.js"></script>
-    <script src="addNGO.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add NGOs</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7/web3.min.js"></script>
+  <script src="./connection.js"></script>
+  <script src="./addNGO.js"></script>
+  <link rel="stylesheet" href="addNGO.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
-	<h1>Add NGO to Authorized List (only owner of contract can add)</h1>
-	<form>
-		<label for="reg_num">Registration Number:</label>
-		<input type="text" name="reg_num" id="reg_num" required><br><br>
+  <div class="header">
+    <img class="logo" src="logo.png" alt="logo" />
+    <nav>
+      <ul class="nav_links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="myDonations.html">My Donations</a></li>
+        <li><a href="enroll.html">Enroll As NGO</a></li>
+        <li><a href="addNGO.html">Add NGO</a></li>
+      </ul>
+    </nav>
+    <button>Connect to Metamask</button>
+  </div>
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('images/bg_9.jpg');"></div>
+    <div class="contents order-2 order-md-1" style="background-color:rgb(237, 230, 230); margin-top: -50px;">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7 py-5">
+            <h1>Add NGO to Authorized List</h1>
+            <h3>(only owner of contract can add)</h3>
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group first">
+                      <label for="reg-number">NGO's Registration Number</label>
+                      <input type="text" id="reg_num" name="reg-number" class="form-control" placeholder="Enter your NGO's registration number" required>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
 
-		<label for="wallet_address">Metamask Wallet Address:</label>
-		<input type="text" name="wallet_address" id="wallet_address" required><br><br>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="lname">Metamask Wallet Address</label>
+                    <input type="text" id="wallet_address" name="wallet-address" class="form-control" placeholder="Enter your Metamask wallet address" required>
+                  </div>
+                </div>
+              </div>
+              <input type="submit" value="Register" class="btn px-5 btn-primary">
 
-		<input type="submit" value="Submit">
-	</form>
+            </form>
+          </div>
+        </div>
+      </div>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
 </body>
+
 </html>

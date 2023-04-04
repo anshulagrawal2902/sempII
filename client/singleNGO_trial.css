@@ -1,0 +1,231 @@
+body {
+  /* background-image: url('images/bg_10.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: rgb(237, 230, 230);
+  font-family: 'Montserrat', sans-serif;
+}
+
+#donate-image {
+  background-image: url("images/bg_10.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 10vh;
+  width: 100%;
+}
+
+/* Style the about section */
+#about {
+  background-color: #FFFFFF;
+  padding: 50px 0; 
+}
+
+#description-div {
+  text-align: center;
+}
+
+#description-div h1 {
+  font-size: 36px;
+  margin-top: 0;
+}
+
+#description-div p {
+  font-size: 18px;
+}
+
+#upvote {
+  background-color: #333;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#upvote:hover {
+  background-color: #555;
+}
+
+#donate-div {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#donate-div form {
+  display: inline-block;
+}
+
+#donate-div input[type="number"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+#donate-div button[type="submit"] {
+  background-color: #333;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#donate-div button[type="submit"]:hover {
+  background-color: #555;
+}
+
+/* Style the mission section */
+#mission {
+  background-color: #F6F6F6;
+  padding: 50px 0;
+  opacity: 0.75;
+}
+
+#mission h2 {
+  font-size: 36px;
+  margin-top: 0;
+  text-align: center;
+}
+
+#mission p {
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Style the team section */
+#team {
+  background-color: #FFFFFF;
+  padding: 50px 0;
+  opacity: 0.75;
+}
+
+#team h2 {
+  font-size: 36px;
+  margin-top: 0;
+  text-align: center;
+}
+
+#team p {
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Style the impact section */
+#impact {
+  background-color: #F6F6F6;
+  padding: 50px 0;
+  opacity: 0.75;
+}
+
+#impact h2 {
+  font-size: 36px;
+  margin-top: 0;
+  text-align: center;
+}
+
+#impact p {
+  font-size: 18px;
+  text-align: center;
+  opacity: 0.75;
+}
+
+/* Style the contact section */
+#contact {
+  background-color: #FFFFFF;
+  padding: 50px 0;
+  opacity: 0.75;
+}
+
+#contact h2 {
+  font-size: 36px;
+  margin-top: 0;
+  text-align: center;
+}
+
+#contact p {
+  font-size: 18px;
+  text-align: center;
+}
+
+#contact form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#contact label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+#contact textarea {
+  height: 150px;
+}
+
+#contact button[type="submit"] {
+  background-color: #333;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#contact button[type="submit"]:hover {
+  background-color: #555;
+}
+
+/* Style the footer */
+footer {
+  background-color: #333;
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  
+  nav a.icon {
+    float: right;
+    display: block;
+  }
+  
+  nav.responsive ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  
+  nav.responsive li {
+    margin-right: 0;
+  }
+}
