@@ -1,4 +1,4 @@
-const ABI =    [
+const ABI =   [
   {
     "inputs": [],
     "stateMutability": "nonpayable",
@@ -58,6 +58,11 @@ const ABI =    [
     ],
     "name": "donationRecords",
     "outputs": [
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
       {
         "internalType": "uint256",
         "name": "registrationNumber",
@@ -299,6 +304,11 @@ const ABI =    [
       {
         "components": [
           {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
             "internalType": "uint256",
             "name": "registrationNumber",
             "type": "uint256"
@@ -319,9 +329,9 @@ const ABI =    [
         "type": "tuple[]"
       }
     ],
-    "stateMutability": "payable",
+    "stateMutability": "view",
     "type": "function",
-    "payable": true
+    "constant": true
   },
   {
     "inputs": [
@@ -352,4 +362,4 @@ const ABI =    [
   }
 ];
   
-const CONTRACT_ADDRESS = "0x851baC5f76d26768834d8CF1A58b9fdC60c14655";
+const CONTRACT_ADDRESS = "0xC84da528C8587D0768f87DcE616A704D088A559a";

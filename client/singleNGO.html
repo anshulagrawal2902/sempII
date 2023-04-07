@@ -9,20 +9,42 @@
     <script src="singleNGO.js"></script>
   </head>
   <body>
+
+
+
+    <div class="header">
+      <img class="logo" alt="logo" />
+      <nav>
+        <ul class="nav_links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="myDonations.html">My Donations</a></li>
+          <li><a href="enroll.html">Enroll As NGO</a></li>
+          <li><a href="addNGO.html">Add NGO</a></li>
+        </ul>
+      </nav>
+      <button class="button">Connect to Metamask</button>
+    </div>
+
     <!-- The image div -->
-    <div id="image-div" style="align-items: center;">
+    <div id="image-div"  style="display: flex; justify-content: center;">
         <img  src="donateImg.jpg"  style="width: 1500px; max-height: 500px; display: block;;">
     </div>
     <!-- The description div -->
     <div id="description-div" style="text-align: center;">
       <h1 id="name">Name Of NGO</h1>
-      <p id="description">description of NGO</p>
-      <button id="upvote">Upvote</button>
+
+      <div id="wht-we-do">
+
+        <h2 > What We Do</h2>
+        <p id="description">description of NGO</p>
+
+        <button id="upvote">Upvote</button>
+      </div>
     </div>
-    <div style="align-items: center; text-align: center;">    
+    <div style="display: flex; justify-content: center; height: 90px; padding-top: 30px;">    
         <form > 
-            <input type="number" id="amount" >
-            <button type="submit">Donate</button>
+          <input type="number" id="amount" name="decimal-input" step="0.001" min="0.01" required>
+            <button id="donate" type="submit">Donate</button>
         </form>
     </div>
 </body>

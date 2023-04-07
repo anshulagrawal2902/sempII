@@ -66,34 +66,18 @@ async function displayNGOList() {
 
   ngoList.forEach((ngo) => {
     
-    for(let j = 0; j < 6; j++){
+    
       let ngoCard = ngoCardTemplate.content.cloneNode(true);
       ngoCard.querySelector(".card-title").textContent = ngo.name;
       // ngoCard.querySelector(".card-text").textContent = ngo.description;
       ngoCard.querySelector(".upvotes").textContent = `Upvotes : ${ngo.upvotes}`;
       ngoCard.querySelector(".front").style.backgroundImage = `url(${images[i]})`
       i = (i + 1) % images.length;
-      // ngoCard.querySelector("#upvoteBtn").addEventListener("click", async() => {
-      //   accounts = await ethereum.request({ method: "eth_requestAccounts" });
-      //   account = accounts[0];
-      //   contract.methods
-      //   .upvote(ngo.wallet)
-      //   .send({ from: account })
-      //   .on("transactionHash", function (hash) {
-      //     console.log("Transaction hash:", hash);
-      //   })
-      //   .on("receipt", function (receipt) {
-      //     console.log("Transaction receipt:", receipt);
-      //   })
-      //   .on("error", function (error) {
-      //     console.error("Transaction error:", error);
-      //   });
-      // });
       ngoCard.querySelector("#knowMoreBtn").addEventListener("click", () => {
         window.location.href = `singleNGO.html?wallet=${ngo.wallet}`;
       });
 
       ngoListContainer.appendChild(ngoCard);
-    }
+      
   });
 }

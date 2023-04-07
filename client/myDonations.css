@@ -10,9 +10,10 @@
 
 body{
   background-color: rgb(237, 230, 230);
+  margin: 0;
 }
 
-li, a, button{
+li, a, .button{
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -20,16 +21,16 @@ li, a, button{
   text-decoration: none;
 }
 
-button{
+.button{
   color: rgb(237, 230, 230);
 }
 
-header{
+.header{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 10%;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   width: 100%;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
@@ -54,7 +55,7 @@ header{
   font-weight: bold;
 }
 
-button{
+.button{
   padding: 9px 25px;
   background-color: rgb(222, 127, 11);
   border: none;
@@ -63,14 +64,11 @@ button{
   transition: all 0.3s ease 0s;
 }
 
-button:hover{
+.button:hover{
   background-color: rgba(222, 127, 11, 0.8);
 } 
 
 .totalDonations{
-    /* top: 100%; */
-    position: relative;
-    top:100px;
     background-color: rgba(222, 127, 11, 0.8);
     color: rgb(237, 230, 230);
     font-family: "Montserrat", sans-serif;
@@ -82,7 +80,7 @@ button:hover{
     padding-top: 10px;
     
 }
-
+/*
 .my-table {
     width: 100%;
     position: relative;
@@ -109,4 +107,4 @@ button:hover{
   
   .my-table tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.075);
-  }
+  } */

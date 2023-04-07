@@ -1,14 +1,102 @@
-#image {
-       
-    height: 300px;
-    background-size: cover;
-  }
-  #description-div {
-    padding: 20px;
-    background-color: #f0f0f0;
-  }
-  h1 {
-    font-size: 32px;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900');
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* background-color: rgb(237, 230, 230); */
+} 
+
+body{
+  background-color: rgb(237, 230, 230);
+  margin: 0;
+}
+
+li, a, .button, #upvote, #donate{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.button, #upvote, #donate{
+  color: rgb(237, 230, 230);
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  overflow: hidden;
+}
+
+.nav_links{
+  list-style: none;
+}
+
+.nav_links li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links li a{
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover{
+  color: rgb(222, 127, 11);
+  font-weight: bold;
+}
+
+.button, #upvote, #donate{
+  padding: 9px 25px;
+  background-color: rgb(222, 127, 11);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.button:hover{
+  background-color: rgba(222, 127, 11, 0.8);
+} 
+
+#upvote{
+  background-color: rgb(46, 122, 16);
+  margin-top: 50px;
+}
+
+#name{
+  font-family: "Montserrat", sans-serif;
+  height: 150px;
+  padding-top: 50px;
+}
+
+#wht-we-do{
+  font-family: sans-serif;
+  padding: 20px;
+  height: 200px;
+  background-color: rgb(217, 224, 225);
+  display: flex;
+  align-items : center;
+  flex-direction: column;
+  border-radius: 30px;
+}
+
+#amount{
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    background-color: #f8f8f8;
     color: #333;
-    margin-top: 0;
-  }
+}
